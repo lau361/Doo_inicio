@@ -1,14 +1,14 @@
 package Utilitario;
 
+import java.time.LocalDate;
+
 import static Utilitario.UtilTexto.vacia;
 
 public class UtilFecha {
     private UtilFecha(){
     }
-    //quiero traer el metodo obtenervalordefecto , para que en caso de que la persona no ingrese el valor ent que sea 0
-    //este metodo esta en Util numero
-    //que se pueda utilizar sin crear un objeto de tipo fecha
-    // como es te metodo es de la clase numero recordemos que lla nos va a devolver un tipo Number ent debo poner el double
+
+    // como es te metodo es de la clase numero recordemos que ya nos va a devolver un tipo Number ent debo poner el double
     public static boolean DiaPosible(int variable ){
         return UtilNumero.obtenerValorDefecto(variable).doubleValue()>0 && UtilNumero.obtenerValorDefecto(variable).doubleValue() <32;
     }
@@ -23,8 +23,12 @@ public class UtilFecha {
     public static boolean FechaValida(int dia, int mes,int year){
         return DiaPosible(dia) && MesPosible(mes) && YearPosible(year);
     }
+    public static LocalDate ValorPorDefecto(int dia, int mes, int year){
+         return FechaValida(dia, mes, year)
+             ? LocalDate.of(dia, mes, year) : LocalDate.of(1000,1,1);
 
-    //quiero una del control de vacios , para dar un buen formato ,
+    }
+
 
 
 
