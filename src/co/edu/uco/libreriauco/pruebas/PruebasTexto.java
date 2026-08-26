@@ -1,7 +1,7 @@
 package co.edu.uco.libreriauco.pruebas;
 
-//import Utilitario.UtilTexto;
-import static Utilitario.UtilTexto.getUtilTexto;
+//import co.edu.uco.libreriauco.Utilitario.UtilTexto;
+import static co.edu.uco.libreriauco.Utilitario.UtilTexto.getUtilTexto;
 
 public class PruebasTexto {
     public static void main(String[] args) {

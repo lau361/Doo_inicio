@@ -1,4 +1,4 @@
-package Utilitario;
+package co.edu.uco.libreriauco.Utilitario;
 
 public class UtilTexto {
     //The objective of this class is proporcionar operacioes comunes para trabajar con String

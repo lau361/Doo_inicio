@@ -1,4 +1,4 @@
-package Utilitario;
+package co.edu.uco.libreriauco.Utilitario;
 
 public class UtilObjeto {
     //solo la misma clase puede crear objetos de este tipo

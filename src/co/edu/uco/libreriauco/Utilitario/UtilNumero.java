@@ -1,4 +1,4 @@
-package Utilitario;
+package co.edu.uco.libreriauco.Utilitario;
 
 public class UtilNumero {
     public static int cero=0;

@@ -1,11 +1,11 @@
-package co.edu.uco.libreriauco.dto;
+package co.edu.uco.libreriauco.entidad;
 
 import co.edu.uco.libreriauco.Utilitario.UtilId;
 import co.edu.uco.libreriauco.Utilitario.UtilTexto;
 
 import java.util.UUID;
 
-public class PaisDTO {
+public class PaisEntidad {
 
     private UUID id;
     private String nombre;
@@ -14,7 +14,7 @@ public class PaisDTO {
 
     //definir valor por defecto para pais
 
-    public PaisDTO(){
+    public PaisEntidad(){
         setId(UtilId.valorDefecto(id));
         setNombre(UtilTexto.vacia);
     }
