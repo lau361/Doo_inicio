@@ -3,14 +3,14 @@ package Utilitario;
 import java.util.UUID;
 public class UtilId {
     //defiinir valor por defecto para el id
-    public class UtilUUID {
 
-        public static final UUID VALOR_DEFECTO  = UUID.fromString("11111111-1111-1111-1111-111111111111");
 
-        private UtilUUID () {
+        public static  UUID VALOR_DEFECTO  = UUID.fromString("00000000-0000-0000-0000-000000000000");
+
+        private UtilId () {
         }
 
-        public static final UUID valorDefecto(final UUID id, final UUID valorDefecto) {
+        public static  UUID valorDefecto(final UUID id, final UUID valorDefecto) {
             return UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(id, valorDefecto);
         }
 
@@ -18,6 +18,6 @@ public class UtilId {
             return valorDefecto(id, VALOR_DEFECTO);
         }
 
-    }
-
 }
+//asegurar que el modelo de dominio quedo finalizado
+
