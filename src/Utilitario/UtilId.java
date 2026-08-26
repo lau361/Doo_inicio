@@ -5,17 +5,17 @@ public class UtilId {
     //defiinir valor por defecto para el id
     public class UtilUUID {
 
-        public static final UUID VALOR_DEFECTO  = UUID.fromString("11200000-0000-1000-0000-000001001011");
+        public static final UUID VALOR_DEFECTO  = UUID.fromString("11111111-1111-1111-1111-111111111111");
 
         private UtilUUID () {
         }
 
-        public static final UUID ValorDefecto(final UUID id, final UUID valorDefecto) {
+        public static final UUID valorDefecto(final UUID id, final UUID valorDefecto) {
             return UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(id, valorDefecto);
         }
 
-        public static  UUID ValorDefecto(final UUID id) {
-            return ValorDefecto(id, VALOR_DEFECTO);
+        public static  UUID valorDefecto(final UUID id) {
+            return valorDefecto(id, VALOR_DEFECTO);
         }
 
     }
