@@ -2,7 +2,6 @@ package Utilitario;
 
 import java.time.LocalDate;
 
-import static Utilitario.UtilTexto.vacia;
 
 public class UtilFecha {
     private UtilFecha(){
