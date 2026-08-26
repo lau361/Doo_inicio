@@ -8,34 +8,36 @@ import java.util.UUID;
 public class PaisDominio {
     private UUID id;
     private String nombre;
+    //no la ha puesto
     private PaisDominio pais;
 
 
-    private PaisDominio(UUID id, String nombre) {
-        this.id = id;
-        this.nombre = nombre;
-    }
+    //privado para que nadie desde afuera me pueda crear un objeto de este tipo
+    // si no que la misma clase pueda controlar como se crean los objetos de este tipo
+    //por medio de static
     private PaisDominio(Builder builder) {
         this.id = builder.id;
         this.nombre = builder.nombre;
     }
 
-    //patron Builder , case innerclass
 
     public UUID getId() {
         return id;
     }
 
-
     public String getNombre() {
         return nombre;
     }
-
 
     public static class Builder {
         //tiene los mismos atributos que la clase principal
         private UUID id;
         private String nombre;
+
+        public Builder(){
+            id = UtilId.valorDefecto(id);
+            nombre = UtilTexto.vacia;
+        }
 
         //metodos para colocar los nombres , los metodos se llaman igula que el atributo
 
