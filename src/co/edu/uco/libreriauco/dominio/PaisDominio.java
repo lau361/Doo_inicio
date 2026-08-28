@@ -8,18 +8,15 @@ import java.util.UUID;
 public class PaisDominio {
     private UUID id;
     private String nombre;
-    //no la ha puesto
-    private PaisDominio pais;
-
 
     //privado para que nadie desde afuera me pueda crear un objeto de este tipo
     // si no que la misma clase pueda controlar como se crean los objetos de este tipo
     //por medio de static
+
     private PaisDominio(Builder builder) {
         this.id = builder.id;
         this.nombre = builder.nombre;
     }
-
 
     public UUID getId() {
         return id;
@@ -34,7 +31,7 @@ public class PaisDominio {
         private UUID id;
         private String nombre;
 
-        public Builder(){
+        public Builder () {
             id = UtilId.valorDefecto(id);
             nombre = UtilTexto.vacia;
         }
