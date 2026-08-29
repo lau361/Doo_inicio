@@ -34,10 +34,6 @@ public class CiudadDTO {
         this.nombre = UtilTexto.getUtilTexto().quitarEspaciosEnBlanco(nombre);
     }
 
-    //public void setPais(PaisDTO pais) {
-      //  this.pais = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(pais, new PaisDTO());
-   // }
-
     public DepartamentoDTO getDepartamento(){
         return departamento;
     }

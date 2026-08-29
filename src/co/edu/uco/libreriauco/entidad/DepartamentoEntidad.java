@@ -12,8 +12,9 @@ public class DepartamentoEntidad {
     private UUID id;
     private String nombre;
 
+    // si creo un departamento sin darle informacion , ennt el departamento se creara de esta manera
     public DepartamentoEntidad(){
-        setId(UtilId.valorDefecto(id));
+        setId(UtilId.valorDefecto(id));//tampoco le puso el id
         setNombre(UtilTexto.vacia);
         setPais(new PaisDTO());
     }
@@ -33,7 +34,12 @@ public class DepartamentoEntidad {
         this.nombre = UtilTexto.getUtilTexto().quitarEspaciosEnBlanco(nombre);
     }
 
+    public PaisDTO getPais() {
+        return pais;
+    }
+
     public void setPais(PaisDTO pais) {
+        //si el pais es nulo, se le asigna un nuevo PaisDTO, de lo contrario se le asigna el pais que se le pasa como parametro
         this.pais = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(pais, new PaisDTO());
     }
 }

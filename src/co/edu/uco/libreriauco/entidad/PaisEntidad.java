@@ -15,9 +15,11 @@ public class PaisEntidad {
     //definir valor por defecto para pais
 
     public PaisEntidad(){
-        setId(UtilId.valorDefecto(id));
+        setId(UtilId.valorDefecto(id));//lo dejo sin id
         setNombre(UtilTexto.vacia);
     }
+    //get and set de id
+    // el get me permite leer la informacion y el set es para asignar o cambiar un valor al atributp
     public UUID getId() {
         return id;
     }
@@ -25,12 +27,13 @@ public class PaisEntidad {
     public void setId(UUID id) {
         this.id =UtilId.valorDefecto(id);
     }
-
+    //get and set de nombre
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
+        //Hago control , ent no quiero que un nombre de un pasi tenga espacios en blanco al inicio o al final
         this.nombre = UtilTexto.getUtilTexto().quitarEspaciosEnBlanco(nombre);
     }
 }
