@@ -1,45 +1,70 @@
 package co.edu.uco.libreriauco.entidad;
 
 import co.edu.uco.libreriauco.Utilitario.UtilId;
-import co.edu.uco.libreriauco.Utilitario.UtilObjeto;
+
 import co.edu.uco.libreriauco.Utilitario.UtilTexto;
-import co.edu.uco.libreriauco.dto.DepartamentoDTO;
+import co.edu.uco.libreriauco.Utilitario.UtilObjeto;
 
 import java.util.UUID;
 
 public class CiudadEntidad {
-    //private PaisDTO pais;
-    private DepartamentoDTO departamento;
-    private UUID id;
-    private String nombre;
+        private DepartamentoEntidad departamento;
+        private UUID id;
+        private String nombre;
 
-    public CiudadEntidad(){
-        setId(UtilId.valorDefecto(id));
-        setNombre(UtilTexto.vacia);
-        //setPais(new PaisDTO());
-        setDepartamento(new DepartamentoDTO());
-    }
-    public UUID getId() {
-        return id;
-    }
+        private CiudadEntidad(UUID id, String nombre ,DepartamentoEntidad departamento) {
+            super();
+            this.id = id;
+            this.nombre = nombre;
+            this.departamento = departamento;
+        }
 
-    public void setId(UUID id) {
-        this.id = UtilId.valorDefecto(id);
-    }
+        private CiudadEntidad(Builder builder) {
+            this.id = builder.id;
+            this.nombre = builder.nombre;
+            this.departamento = new DepartamentoEntidad.Builder().Build();
+        }
 
-    public String getNombre() {
-        return nombre;
-    }
 
-    public void setNombre(String nombre) {
-        this.nombre = UtilTexto.getUtilTexto().quitarEspaciosEnBlanco(nombre);
-    }
+        public UUID getId() {
+            return id;
+        }
 
-    public DepartamentoDTO getDepartamento(){
-        return departamento;
-    }
-    public void setDepartamento(DepartamentoDTO departamento) {
-        this.departamento = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(departamento, new DepartamentoDTO());
-    }
+        public String getNombre() {
+            return nombre;
+        }
+
+        public static class Builder {
+            private UUID id;
+            private String nombre;
+            private DepartamentoEntidad departamento;
+            public Builder() {
+                id = UtilId.valorDefecto(id);
+                nombre = UtilTexto.vacia;
+                departamento = new DepartamentoEntidad.Builder().Build();
+            }
+
+            public Builder id(UUID id) {
+                this.id = UtilId.valorDefecto(id);
+                return this;
+            }
+
+            public Builder nombre(String nombre) {
+                this.nombre = UtilTexto.getUtilTexto().quitarEspaciosEnBlanco(nombre);
+                return this;
+            }
+
+            public Builder departamento(DepartamentoEntidad departamento) {
+                this.departamento = UtilObjeto.obtenerValorDefectoSiValorOriginalEsNulo(departamento, new DepartamentoEntidad.Builder().Build());
+                return this;
+            }
+
+            public CiudadEntidad Build() {
+                return new CiudadEntidad(this);
+            }
+
+        }
+
 
 }
+
